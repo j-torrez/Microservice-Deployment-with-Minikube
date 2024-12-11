@@ -272,7 +272,7 @@ kubectl delete service handshake-deployment
 - The Docker image for this microservice is hosted in the following Docker Hub repository: [1bosquito1 Docker Hub Repository](https://hub.docker.com/repositories/1bosquito1).
 - The script pulls the image directly from this repository to ensure that the latest and consistent version of the application is deployed.
 
-### Why Pulling from Docker Hub is Better:
+### Why Pulling from Docker Hub:
 
 1. **Centralized Management**: Hosting the Docker image in Docker Hub keeps everything in one place, making it easier to manage and update.
 2. **Ease of Collaboration**: Other developers and team members can access and deploy the same image without needing to rebuild it locally.
