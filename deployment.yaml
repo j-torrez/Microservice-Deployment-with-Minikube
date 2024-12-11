@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: handshake-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: handshake-deployment
+  template:
+    metadata:
+      labels:
+        app: handshake-deployment
+    spec:
+      containers:
+      - name: handshake-deployment
+        image: 1bosquito1/handshake-test
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80

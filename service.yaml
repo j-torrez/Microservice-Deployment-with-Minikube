@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: handshake-deployment
+spec:
+  type: NodePort #You can use NodePort, I was just testing 
+  selector:
+    app: handshake-deployment
+  ports:
+  - port: 80
+    targetPort: 80
