@@ -2,7 +2,7 @@
 
 Build and deploy a simple microservice into a Kubernetes cluster using Minikube.
 
-## Overview
+## Overview 🌟
 
 The microservice is a Python application built with **FastAPI**, exposing a single endpoint:
 
@@ -22,7 +22,7 @@ The deployment process includes:
 
 ---
 
-## Prerequisites
+## Prerequisites ✅
 
 1. **Minikube**: Ensure Minikube is installed and running on your local machine.
 
@@ -44,7 +44,7 @@ The deployment process includes:
 
 ---
 
-## Project Structure
+## Project Structure 🗂️
 
 ```plaintext
 .
@@ -61,7 +61,7 @@ The deployment process includes:
 
 ---
 
-## Instructions for Local and Cluster Deployment
+## Instructions for Local and Cluster Deployment 🚀
 
 ### 1. Clone the Repository
 
@@ -111,7 +111,7 @@ Expected Response:
 
 ---
 
-## Dockerization
+## Dockerization 🐳
 
 In case you want to build the Docker image manually and run the application locally, follow these steps. This approach allows for testing the application outside Kubernetes while leveraging the portability of Docker containers.
 
@@ -161,7 +161,7 @@ Expected Response:
 
 ---
 
-## Kubernetes Deployment
+## Kubernetes Deployment ☸️
 
 In case you want to manually deploy the microservice using Kubernetes, follow these steps. This approach assumes you have a running Minikube cluster and the necessary `kubectl` tool installed.
 
@@ -225,7 +225,7 @@ In case you want to manually deploy the microservice using Kubernetes, follow th
 
 ---
 
-## Kubernetes Manifests
+## Kubernetes Manifests 📄
 
 ### `deployment.yaml`
 
@@ -243,7 +243,7 @@ Exposes the deployment as a service.
 
 ---
 
-## Script Details
+## Script Details 🛠️
 
 The `build_and_deploy.sh` script automates:
 
@@ -255,7 +255,7 @@ The `build_and_deploy.sh` script automates:
 
 ---
 
-## Cleanup Instructions
+## Cleanup Instructions 🧹
 
 To delete the deployment and service:
 
@@ -266,7 +266,7 @@ kubectl delete service handshake-deployment
 
 ---
 
-## Notes
+## Notes 📝
 
 - This project is perfect for testing and development on your local machine using Minikube.
 - The Docker image for this microservice is hosted in the following Docker Hub repository: [1bosquito1 Docker Hub Repository](https://hub.docker.com/repositories/1bosquito1).
