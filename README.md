@@ -1,11 +1,16 @@
 # Microservice Deployment with Minikube
 
-Build and deploy a simple microservice into a Kubernetes cluster using Minikube.
+This project demonstrates how to build and deploy a simple microservice into a Kubernetes cluster using Minikube.
 
 ## Overview
 
 The microservice is a Python application built with **FastAPI**, exposing a single endpoint:
 - `/student`: Returns a JSON response: `{"student_status": "hired"}`.
+
+### Design Decisions
+- **FastAPI Framework**: Chosen for its lightweight, high-performance capabilities and ease of use.
+- **Docker & Kubernetes**: To ensure the microservice is portable, scalable, and deployable in modern cloud environments.
+- **Minikube**: Provides a local Kubernetes cluster for testing and development.
 
 The deployment process includes:
 1. Building a Docker image for the application.
@@ -49,7 +54,7 @@ The deployment process includes:
 
 ---
 
-## Steps to Deploy the Microservice
+## Instructions for Local and Cluster Deployment
 
 ### 1. Clone the Repository
 Clone this repository to your local machine:
@@ -69,6 +74,12 @@ Execute the script to build the Docker image, apply Kubernetes manifests, and re
 ```bash
 ./build_and_deploy.sh
 ```
+
+The script ensures the following:
+- Minikube is running.
+- Docker builds the microservice image.
+- Kubernetes deployment and service are applied.
+- The service URL is retrieved dynamically.
 
 ### 4. Test the `/student` Endpoint
 The script will output the service URL (e.g., `http://127.0.0.1:12345`). To access the `/student` endpoint, you will need to append `/student` manually to the URL. After appending `/student` to the service URL, open it in your browser or test it with `curl`:
@@ -107,7 +118,7 @@ The `build_and_deploy.sh` script automates:
 
 ---
 
-## Cleanup
+## Cleanup Instructions
 To delete the deployment and service:
 ```bash
 kubectl delete deployment handshake-deployment
@@ -118,6 +129,13 @@ kubectl delete service handshake-deployment
 
 ## Notes
 
-- Ensure the Docker image name in the `build_and_deploy.sh` script matches the repository name if pushing to Docker Hub.
-- The project is designed for local testing and development with Minikube.
+- - The project is designed for local testing and development with Minikube.
+- The Docker image for this microservice is hosted in the following Docker Hub repository: [1bosquito1 Docker Hub Repository](https://hub.docker.com/repositories/1bosquito1).
+- The script pulls the image directly from this repository to ensure that the latest and consistent version of the application is deployed.
+
+### Why Pulling from Docker Hub is Better:
+1. **Centralized Management**: The Docker Hub repository allows you to maintain a single source of truth for the application image.
+2. **Ease of Collaboration**: Other developers and team members can access and deploy the same image without needing to rebuild it locally.
+3. **Faster Deployment**: Minikube pulls the prebuilt image, reducing the need for local builds during deployment.
+4. **Scalability**: Ensures consistent images across different environments, including staging and production.
 
